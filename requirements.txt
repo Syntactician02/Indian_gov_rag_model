@@ -1,46 +1,30 @@
-# -------------------------------
 # Web Framework
-# -------------------------------
-flask==3.1.0
-flask-cors==4.0.0
+flask==3.1.2
+flask-cors==6.0.1
 
-# -------------------------------
 # HTTP Requests & Web Scraping
-# -------------------------------
 requests==2.32.3
 beautifulsoup4==4.12.3
-lxml==4.9.4   # 5.x fails to build on 3.14 currently
+lxml==5.1.0
 
-# -------------------------------
 # Machine Learning & Embeddings
-# -------------------------------
-# Torch and transformers aren't yet officially released for 3.14,
-# so use pre-release compatible wheels if available.
-torch==2.3.1
+torch==2.9.0
 sentence-transformers==2.2.2
-transformers==4.40.2
+transformers==4.30.2
+huggingface-hub==0.13.4   # Ensures SentenceTransformers works without cached_download error
 
-# -------------------------------
 # Vector Database
-# -------------------------------
-# faiss doesn't support 3.14 yet; comment it out or install manually when available.
+# faiss is tricky on Windows, install manually if needed
 # faiss-cpu==1.8.0
-# faiss-cpu-windows==1.8.0
 
-# -------------------------------
 # Data Processing
-# -------------------------------
-numpy==1.26.4     # latest stable that supports 3.14
+numpy==1.26.4
 pandas==2.2.2
 
-# -------------------------------
 # Utilities
-# -------------------------------
 python-dateutil==2.9.0.post0
 pytz==2024.1
 python-dotenv==1.0.1
 
-# -------------------------------
 # Optional for production (Linux only)
-# -------------------------------
 # gunicorn==21.2.0
